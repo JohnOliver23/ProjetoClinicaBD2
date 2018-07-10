@@ -1,13 +1,14 @@
--- Insert Convenio --
-select * from convenio
+﻿-- Insert Convenio --
+select * from convenio;
 insert into convenio values('13.223.975/0001-20','Caixa Saúde');
 insert into convenio values('92.693.118/0001-60','Bradesco Saúde');
 insert into convenio values('29.309.127/0001-79','Amil Saúde');
 insert into convenio values('02.812.468/0001-06','Unimed');
 insert into convenio values('08.708.980/0001-93','Amr Saúde');
 
+
 -- Insert Tipo --
-select * from tipo
+select * from tipo;
 insert into tipo values (default,'Tórax');
 insert into tipo values (default,'Abdómen');
 insert into tipo values (default,'Coluna');
@@ -16,8 +17,9 @@ insert into tipo values (default,'Bacia');
 insert into tipo values (default,'Joelho');
 insert into tipo values (default,'Outros');
 
+
 -- Inser Funcionário --
-select * from funcionario
+select * from funcionario;
 insert into Funcionario  values ('Tana Randolph','637523689','(83)99124-6259','P.O. Box 428, 8483 Non Avenue','1633092782099');
 insert into Funcionario  values ('Adam Mccray','152484192','(83)99663-2668','Ap #214-5849 Eleifend Av.','1679070298499');
 insert into Funcionario  values ('Ralph Moses','347715070','(83)99913-3932','P.O. Box 753, 4858 Mi Road','1673013046199');
@@ -29,10 +31,9 @@ insert into Funcionario  values ('Susan Reilly','224319418','(83)98718-7741','23
 insert into Funcionario  values ('Mary Warren','444357453','','515-9199 Purus Rd.','1636040797199');
 insert into Funcionario  values ('Ali Hubbard','336665294','(83)98880-7081','P.O. Box 419, 3875 At, Avenue','1645032953899');
 
+
 -- Insert Médico --
-
-
-select * from medico
+select * from medico;
 DO $$
 DECLARE 
 	funcs CURSOR for select * from funcionario;
@@ -50,9 +51,9 @@ BEGIN
 	END LOOP;
 END$$;
 
--- Insert Radiologista --
 
-select * from radiologista
+-- Insert Radiologista --
+select * from radiologista;
 DO $$
 DECLARE 
 	funcs CURSOR for select * from funcionario;
@@ -68,7 +69,6 @@ BEGIN
 		i = i + 1;
 	END LOOP;
 END$$;
-
 
 
 -- Insert Paciente --
@@ -93,9 +93,8 @@ insert into Paciente (codigo,cpf,endereço,telefone,nome) values (default,'16320
 insert into Paciente (codigo,cpf,endereço,telefone,nome) values (default,'1619050854599','379-6279 Fermentum Street','(83)98828-1565','Winter Hogan');
 insert into Paciente (codigo,cpf,endereço,telefone,nome) values (default,'1696102789199','Ap #250-8952 Interdum Ave','(83)99184-0399','Belle Orr');
 
-
-select * from paciente
-select * from convenio
+select * from paciente;
+select * from convenio;
 
 DO $$
 DECLARE 
@@ -115,5 +114,58 @@ END$$;
 
 select p.nome, c.nome from paciente p join convenio c
 on p.convenio = c.cnpj;
+
+-- Insert Consulta --
+select * from consulta;
+select * from medico;
+select * from paciente;
+
+insert into consulta values ('2018-05-10', '637523689', 1);
+insert into consulta values ('2018-05-10', '637523689', 2);
+insert into consulta values ('2018-05-11', '637523689', 3);
+insert into consulta values ('2018-05-11', '637523689', 4);
+insert into consulta values ('2018-05-12', '637523689', 5);
+insert into consulta values ('2018-05-10', '152484192', 6);
+insert into consulta values ('2018-05-10', '152484192', 7);
+insert into consulta values ('2018-05-11', '152484192', 8);
+insert into consulta values ('2018-05-11', '152484192', 9);
+insert into consulta values ('2018-05-12', '152484192', 10);
+insert into consulta values ('2018-05-15', '347715070', 11);
+insert into consulta values ('2018-05-16', '347715070', 12);
+insert into consulta values ('2018-05-16', '347715070', 13);
+insert into consulta values ('2018-05-17', '347715070', 14);
+insert into consulta values ('2018-05-18', '605660224', 15);
+insert into consulta values ('2018-05-18', '605660224', 16);
+insert into consulta values ('2018-05-19', '605660224', 17);
+insert into consulta values ('2018-05-19', '736192006', 18);
+insert into consulta values ('2018-05-19', '736192006', 19);
+insert into consulta values ('2018-05-20', '736192006', 20);
+
+
+-- Insert Radiografia --
+select * from radiografia;
+select * from radiologista;
+select * from tipo;
+
+insert into radiografia values (01, '2018-05-13', 'imagem01.png', '633043336', 1);
+insert into radiografia values (02, '2018-05-13', 'imagem02.png', '633043336', 1);
+insert into radiografia values (03, '2018-05-13', 'imagem03.png', '633043336', 2);
+insert into radiografia values (04, '2018-05-13', 'imagem04.png', '213822877', 2);
+insert into radiografia values (05, '2018-05-13', 'imagem05.png', '213822877', 3);
+insert into radiografia values (06, '2018-05-15', 'imagem06.png', '224319418', 4);
+insert into radiografia values (07, '2018-05-15', 'imagem07.png', '224319418', 1);
+insert into radiografia values (08, '2018-05-15', 'imagem08.png', '224319418', 3);
+insert into radiografia values (09, '2018-05-15', 'imagem09.png', '444357453', 3);
+insert into radiografia values (10, '2018-05-15', 'imagem10.png', '444357453', 5);
+insert into radiografia values (11, '2018-05-16', 'imagem11.png', '336665294', 6);
+insert into radiografia values (12, '2018-05-16', 'imagem12.png', '336665294', 6);
+insert into radiografia values (13, '2018-05-16', 'imagem13.png', '336665294', 6);
+insert into radiografia values (14, '2018-05-16', 'imagem14.png', '336665294', 6);
+insert into radiografia values (15, '2018-05-17', 'imagem15.png', '213822877', 5);
+insert into radiografia values (16, '2018-05-17', 'imagem16.png', '213822877', 5);
+insert into radiografia values (17, '2018-05-17', 'imagem17.png', '444357453', 1);
+insert into radiografia values (18, '2018-05-17', 'imagem18.png', '444357453', 1);
+insert into radiografia values (19, '2018-05-18', 'imagem19.png', '444357453', 2);
+insert into radiografia values (20, '2018-05-18', 'imagem20.png', '444357453', 2);
 
 
