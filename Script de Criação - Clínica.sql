@@ -1,4 +1,4 @@
-﻿/* Lógico_1: */
+/* Lógico_1: */
 
 CREATE TABLE Paciente (
     Codigo serial PRIMARY KEY,
@@ -29,7 +29,7 @@ CREATE TABLE Consulta (
 );
 
 CREATE TABLE Radiografia (
-    Codigo INTEGER PRIMARY KEY,
+    Codigo serial PRIMARY KEY,
     Data DATE,
     Imagem VARCHAR,
     MatRad VARCHAR,
@@ -42,7 +42,7 @@ CREATE TABLE Convenio (
 );
 
 CREATE TABLE Resultado_Analisa (
-    Codigo INTEGER PRIMARY KEY,
+    Codigo serial PRIMARY KEY,
     Descricao VARCHAR,
     Data DATE,
     MatMed VARCHAR,
