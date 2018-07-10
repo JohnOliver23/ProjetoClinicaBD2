@@ -1,4 +1,4 @@
-/* Lógico_1: */
+﻿/* Lógico_1: */
 
 CREATE TABLE Paciente (
     Codigo serial PRIMARY KEY,
@@ -36,12 +36,6 @@ CREATE TABLE Radiografia (
 	CodTipo INTEGER
 );
 
-CREATE TABLE Tratamento (
-    Descricao VARCHAR,
-    Codigo INTEGER PRIMARY KEY,
-    Substancia VARCHAR
-);
-
 CREATE TABLE Convenio (
     CNPJ VARCHAR PRIMARY KEY,
     Nome VARCHAR
@@ -64,10 +58,6 @@ CREATE TABLE Tipo (
 CREATE TABLE Radiologista (
     CRTR VARCHAR,
     F_Matricula VARCHAR PRIMARY KEY
-);
-
-CREATE TABLE Encaminhamento (
-    CodTrat INTEGER
 );
  
 ALTER TABLE Paciente ADD CONSTRAINT FK_Paciente_1
@@ -109,10 +99,4 @@ ALTER TABLE Resultado_Analisa ADD CONSTRAINT FK_Resultado_Analisa_2
 ALTER TABLE Radiologista ADD CONSTRAINT FK_Radiologista_1
     FOREIGN KEY (F_Matricula)
     REFERENCES Funcionario (Matricula)
-    ON DELETE CASCADE ON UPDATE CASCADE;
- 
-ALTER TABLE Encaminhamento ADD CONSTRAINT FK_Encaminhamento_0
-    FOREIGN KEY (CodTrat)
-    REFERENCES Tratamento (Codigo)
-    ON DELETE SET NULL ON UPDATE CASCADE;
-  
+    ON DELETE CASCADE ON UPDATE CASCADE; 
