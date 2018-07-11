@@ -23,6 +23,7 @@ CREATE TABLE Medico (
 );
 
 CREATE TABLE Consulta (
+    codigo serial PRIMARY KEY,
     Data DATE,
     MatMed VARCHAR,
     CodPac INTEGER
@@ -33,7 +34,8 @@ CREATE TABLE Radiografia (
     Data DATE,
     Imagem VARCHAR,
     MatRad VARCHAR,
-	CodTipo INTEGER
+	CodTipo INTEGER,
+    CodConsulta INTEGER
 );
 
 CREATE TABLE Convenio (
@@ -86,6 +88,11 @@ ALTER TABLE Radiografia ADD CONSTRAINT FK_Radiografia_1
 ALTER TABLE Radiografia ADD CONSTRAINT FK_Radiografia_2
     FOREIGN KEY (CodTipo)
     REFERENCES Tipo (Codigo)
+    ON DELETE SET NULL ON UPDATE CASCADE;
+
+ALTER TABLE Radiografia ADD CONSTRAINT FK_Radiografia_3
+    FOREIGN KEY (CodConsulta)
+    REFERENCES Tipo (Consulta)
     ON DELETE SET NULL ON UPDATE CASCADE;
  
 ALTER TABLE Resultado_Analisa ADD CONSTRAINT FK_Resultado_Analisa_1
