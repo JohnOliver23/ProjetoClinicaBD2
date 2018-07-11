@@ -6,3 +6,7 @@ CREATE ROLE usr LOGIN
  PASSWORD 'bd2user';
  
 REVOKE ALL ON ALL TABLES IN SCHEMA PUBLIC FROM usr;
+
+ GRANT EXECUTE ON FUNCTION consultacpf(cpf_input character varying) TO usr;
+
+ GRANT SELECT ON TABLE examesolicitado TO usr;

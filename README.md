@@ -23,12 +23,14 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 - [x] 10 Consultas variadas.
 - [ ] 1 Visão que permita inserção.
 - [ ] 2 visões robustas.
-- [ ] Provê acesso a uma das visões ao usuário 2.
+- [x] Provê acesso a uma das visões ao usuário 2.
 - [ ] 3 índices.
 - [x] 1 Função com uso de SUM, MAX, MIN, AVG ou COUNT.
 - [ ] 3 Funções. (Ao menos duas com tratamento de exceções).
-- [ ] Provê acesso de execução de uma das funções ao usuário 2.
+- [x] Provê acesso de execução de uma das funções ao usuário 2.
 - [ ] 3 Triggers.
 - [ ] Identificar 2 consultas que possam ser melhoradas.
+
+
 
 
