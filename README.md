@@ -6,7 +6,7 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 ![Modelo Conceitual](https://github.com/willabdon/ProjetoClinicaBD2/blob/master/imagens/Conceitual.png?raw=true)
 
 ### Modelo Lógico
-![Modelo Conceitual](https://github.com/willabdon/ProjetoClinicaBD2/blob/master/imagens/Logico.png?raw=true)
+![Modelo Conceitual](https://github.com/willabdon/ProjetoClinicaBD2/blob/master/imagens/Lógico.png?raw=true)
 
 #### Alunos
 - César Cesconetto
