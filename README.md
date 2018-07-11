@@ -17,8 +17,8 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 
 - [x] Descrição da Aplicação e Regras de Negócio.
 - [x] Modelo Conceitual e Lógico.
-- [ ] Criação de 2 usuários (1 Owner e 1 com acesso restrito).
-- [ ] Criação do BD e associação a Owner.
+- [x] Criação de 2 usuários (1 Owner e 1 com acesso restrito).
+- [x] Criação do BD e associação a Owner.
 - [ ] Tabelas e Constraints (Campos Nulos e não nulos, check de validação).
 - [x] 10 Consultas variadas.
 - [ ] 1 Visão que permita inserção.

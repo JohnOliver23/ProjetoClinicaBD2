@@ -107,3 +107,5 @@ ALTER TABLE Radiologista ADD CONSTRAINT FK_Radiologista_1
     FOREIGN KEY (F_Matricula)
     REFERENCES Funcionario (Matricula)
     ON DELETE CASCADE ON UPDATE CASCADE; 
+	
+ALTER DATABASE "Clinica" OWNER TO adm
