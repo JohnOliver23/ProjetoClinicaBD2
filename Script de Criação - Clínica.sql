@@ -1,72 +1,78 @@
-/* Lógico_1: */
+﻿/* Lógico_1: */
 
 CREATE TABLE Paciente (
-    Codigo serial PRIMARY KEY,
-	CPF VARCHAR,
-    Endereço VARCHAR,
-    Telefone VARCHAR,
-    Nome VARCHAR,
-    Convenio VARCHAR
+    Codigo serial 	PRIMARY KEY not null,
+    CPF 		VARCHAR not null,
+    Endereço 		VARCHAR null,
+    Telefone 		VARCHAR null,
+    Nome 		VARCHAR not null,
+    Convenio 		VARCHAR null
 );
 
 CREATE TABLE Funcionario (
-    Nome VARCHAR,
-    Matricula VARCHAR PRIMARY KEY,
-    Telefone VARCHAR,
-    Endereço VARCHAR,
-    CPF VARCHAR
+    Nome 		VARCHAR not null,
+    Matricula 		VARCHAR PRIMARY KEY not null,
+    Telefone 		VARCHAR null,
+    Endereço 		VARCHAR null,
+    CPF 		VARCHAR not null
 );
 
 CREATE TABLE Medico (
-    CRM VARCHAR,
-    F_Matricula VARCHAR PRIMARY KEY
+    CRM 	VARCHAR not null,
+    F_Matricula VARCHAR PRIMARY KEY not null
 );
 
 CREATE TABLE Consulta (
-    codigo serial PRIMARY KEY,
-    Data DATE,
-    MatMed VARCHAR,
-    CodPac INTEGER
+    codigo 	serial PRIMARY KEY not null,
+    Data 	DATE not null,
+    MatMed 	VARCHAR not null,
+    CodPac 	INTEGER not null
 );
 
 CREATE TABLE Radiografia (
-    Codigo serial PRIMARY KEY,
-    Data DATE,
-    Imagem VARCHAR,
-    MatRad VARCHAR,
-	CodTipo INTEGER,
-    CodConsulta INTEGER
+    Codigo 	serial PRIMARY KEY not null,
+    Data 	DATE not null,
+    Imagem 	VARCHAR not null,
+    MatRad 	VARCHAR null,
+    CodTipo 	INTEGER null,
+    CodConsulta INTEGER not null
 );
 
 CREATE TABLE Convenio (
-    CNPJ VARCHAR PRIMARY KEY,
-    Nome VARCHAR
+    CNPJ VARCHAR PRIMARY KEY not null,
+    Nome VARCHAR not null
 );
 
 CREATE TABLE Resultado_Analisa (
-    Codigo serial PRIMARY KEY,
-    Descricao VARCHAR,
-    Data DATE,
-    MatMed VARCHAR,
-    CodRad INTEGER
+    Codigo	serial PRIMARY KEY not null,
+    Descricao	VARCHAR null,
+    Data	DATE not null,
+    MatMed	VARCHAR not null,
+    CodRad	INTEGER not null
 );
 
 CREATE TABLE Tipo (
-    Codigo serial PRIMARY KEY,
-    Descricao VARCHAR
+    Codigo	serial PRIMARY KEY not null,
+    Descricao	VARCHAR not null
 );
 
 
 CREATE TABLE Radiologista (
-    CRTR VARCHAR,
-    F_Matricula VARCHAR PRIMARY KEY
+    CRTR 	VARCHAR not null,
+    F_Matricula VARCHAR PRIMARY KEY not null
 );
  
 ALTER TABLE Paciente ADD CONSTRAINT FK_Paciente_1
     FOREIGN KEY (Convenio)
     REFERENCES Convenio (CNPJ)
     ON DELETE SET NULL ON UPDATE CASCADE;
- 
+
+ALTER TABLE Paciente ADD CONSTRAINT Un_Paciente
+    UNIQUE (cpf);
+
+ALTER TABLE Funcionario ADD CONSTRAINT Un_funcionario
+    UNIQUE (cpf);
+     
 ALTER TABLE Medico ADD CONSTRAINT FK_Medico_1
     FOREIGN KEY (F_Matricula)
     REFERENCES Funcionario (Matricula)
@@ -92,7 +98,7 @@ ALTER TABLE Radiografia ADD CONSTRAINT FK_Radiografia_2
 
 ALTER TABLE Radiografia ADD CONSTRAINT FK_Radiografia_3
     FOREIGN KEY (CodConsulta)
-    REFERENCES Tipo (Consulta)
+    REFERENCES Consulta (codigo)
     ON DELETE SET NULL ON UPDATE CASCADE;
  
 ALTER TABLE Resultado_Analisa ADD CONSTRAINT FK_Resultado_Analisa_1
