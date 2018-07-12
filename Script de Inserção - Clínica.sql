@@ -1,4 +1,4 @@
--- Insert Convenio --
+﻿-- Insert Convenio --
 select * from convenio;
 insert into convenio values('13.223.975/0001-20','Caixa Saúde');
 insert into convenio values('92.693.118/0001-60','Bradesco Saúde');
@@ -120,26 +120,26 @@ select * from consulta;
 select * from medico;
 select * from paciente;
 
-insert into consulta values (default,'2018-05-10', '637523689', 21);
-insert into consulta values (default,'2018-05-10', '637523689', 22);
-insert into consulta values (default,'2018-05-11', '637523689', 23);
-insert into consulta values (default,'2018-05-11', '637523689', 24);
-insert into consulta values (default,'2018-05-12', '637523689', 25);
-insert into consulta values (default,'2018-05-10', '152484192', 26);
-insert into consulta values (default,'2018-05-10', '152484192', 27);
-insert into consulta values (default,'2018-05-11', '152484192', 28);
-insert into consulta values (default,'2018-05-11', '152484192', 29);
-insert into consulta values (default,'2018-05-12', '152484192', 30);
-insert into consulta values (default,'2018-05-15', '347715070', 31);
-insert into consulta values (default,'2018-05-16', '347715070', 32);
-insert into consulta values (default,'2018-05-16', '347715070', 33);
-insert into consulta values (default,'2018-05-17', '347715070', 34);
-insert into consulta values (default,'2018-05-18', '605660224', 35);
-insert into consulta values (default,'2018-05-18', '605660224', 36);
-insert into consulta values (default,'2018-05-19', '605660224', 37);
-insert into consulta values (default,'2018-05-19', '736192006', 38);
-insert into consulta values (default,'2018-05-19', '736192006', 39);
-insert into consulta values (default,'2018-05-20', '736192006', 40);
+insert into consulta values (default,'2018-05-10', '637523689', 1);
+insert into consulta values (default,'2018-05-10', '637523689', 2);
+insert into consulta values (default,'2018-05-11', '637523689', 3);
+insert into consulta values (default,'2018-05-11', '637523689', 4);
+insert into consulta values (default,'2018-05-12', '637523689', 5);
+insert into consulta values (default,'2018-05-10', '152484192', 6);
+insert into consulta values (default,'2018-05-10', '152484192', 7);
+insert into consulta values (default,'2018-05-11', '152484192', 8);
+insert into consulta values (default,'2018-05-11', '152484192', 9);
+insert into consulta values (default,'2018-05-12', '152484192', 10);
+insert into consulta values (default,'2018-05-15', '347715070', 11);
+insert into consulta values (default,'2018-05-16', '347715070', 12);
+insert into consulta values (default,'2018-05-16', '347715070', 13);
+insert into consulta values (default,'2018-05-17', '347715070', 14);
+insert into consulta values (default,'2018-05-18', '605660224', 15);
+insert into consulta values (default,'2018-05-18', '605660224', 16);
+insert into consulta values (default,'2018-05-19', '605660224', 17);
+insert into consulta values (default,'2018-05-19', '736192006', 18);
+insert into consulta values (default,'2018-05-19', '736192006', 19);
+insert into consulta values (default,'2018-05-20', '736192006', 20);
 
 
 -- Insert Radiografia --
@@ -147,26 +147,26 @@ select * from radiografia;
 select * from radiologista;
 select * from tipo;
 
-insert into radiografia values (default, '2018-05-13', 'imagem01.png', '633043336', 1, 1);
-insert into radiografia values (default, '2018-05-13', 'imagem02.png', '633043336', 1, 2);
-insert into radiografia values (default, '2018-05-13', 'imagem03.png', '633043336', 2, 3);
-insert into radiografia values (default, '2018-05-13', 'imagem04.png', '213822877', 2, 4);
-insert into radiografia values (default, '2018-05-13', 'imagem05.png', '213822877', 3, 5);
-insert into radiografia values (default, '2018-05-15', 'imagem06.png', '224319418', 4, 6);
-insert into radiografia values (default, '2018-05-15', 'imagem07.png', '224319418', 1, 7);
-insert into radiografia values (default, '2018-05-15', 'imagem08.png', '224319418', 3, 8);
-insert into radiografia values (default, '2018-05-15', 'imagem09.png', '444357453', 3, 9);
-insert into radiografia values (default, '2018-05-15', 'imagem10.png', '444357453', 5, 10);
-insert into radiografia values (default, '2018-05-16', 'imagem11.png', '336665294', 6, 11);
-insert into radiografia values (default, '2018-05-16', 'imagem12.png', '336665294', 6, 12);
-insert into radiografia values (default, '2018-05-16', 'imagem13.png', '336665294', 6, 13);
-insert into radiografia values (default, '2018-05-16', 'imagem14.png', '336665294', 6, 14);
-insert into radiografia values (default, '2018-05-17', 'imagem15.png', '213822877', 5, 15);
-insert into radiografia values (default, '2018-05-17', 'imagem16.png', '213822877', 5, 16);
-insert into radiografia values (default, '2018-05-17', 'imagem17.png', '444357453', 1, 17);
-insert into radiografia values (default, '2018-05-17', 'imagem18.png', '444357453', 1, 18);
-insert into radiografia values (default, '2018-05-18', 'imagem19.png', '444357453', 2, 19);
-insert into radiografia values (default, '2018-05-18', 'imagem20.png', '444357453', 2, 20);
+insert into radiografia values (default, '2018-05-23', 'imagem01.png', '633043336', 1, 1);
+insert into radiografia values (default, '2018-05-23', 'imagem02.png', '633043336', 1, 2);
+insert into radiografia values (default, '2018-05-23', 'imagem03.png', '633043336', 2, 3);
+insert into radiografia values (default, '2018-05-23', 'imagem04.png', '213822877', 2, 4);
+insert into radiografia values (default, '2018-05-23', 'imagem05.png', '213822877', 3, 5);
+insert into radiografia values (default, '2018-05-23', 'imagem06.png', '224319418', 4, 6);
+insert into radiografia values (default, '2018-05-25', 'imagem07.png', '224319418', 1, 7);
+insert into radiografia values (default, '2018-05-25', 'imagem08.png', '224319418', 3, 8);
+insert into radiografia values (default, '2018-05-20', 'imagem09.png', '444357453', 3, 9);
+insert into radiografia values (default, '2018-05-20', 'imagem10.png', '444357453', 5, 10);
+insert into radiografia values (default, '2018-05-20', 'imagem11.png', '336665294', 6, 11);
+insert into radiografia values (default, '2018-05-20', 'imagem12.png', '336665294', 6, 12);
+insert into radiografia values (default, '2018-05-20', 'imagem13.png', '336665294', 6, 13);
+insert into radiografia values (default, '2018-05-21', 'imagem14.png', '336665294', 6, 14);
+insert into radiografia values (default, '2018-05-21', 'imagem15.png', '213822877', 5, 15);
+insert into radiografia values (default, '2018-05-21', 'imagem16.png', '213822877', 5, 16);
+insert into radiografia values (default, '2018-05-22', 'imagem17.png', '444357453', 1, 17);
+insert into radiografia values (default, '2018-05-22', 'imagem18.png', '444357453', 1, 18);
+insert into radiografia values (default, '2018-05-22', 'imagem19.png', '444357453', 2, 19);
+insert into radiografia values (default, '2018-05-22', 'imagem20.png', '444357453', 2, 20);
 
 -- Insert Resultado_Analisa --
 
