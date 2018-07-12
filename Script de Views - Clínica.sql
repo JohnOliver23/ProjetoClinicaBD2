@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW ExameSolicitado AS
+﻿CREATE OR REPLACE VIEW ExameSolicitado AS
 Select p.nome Paciente, f.nome Médico, t.descricao, a.descricao AS Exame
 FROM funcionario f JOIN medico m ON f.matricula = m.f_matricula
 JOIN consulta c ON c.matmed = m.f_matricula
@@ -9,3 +9,13 @@ JOIN resultado_analisa a ON r.codigo = a.codrad
 ORDER BY p.nome;
 
 select * from examesolicitado
+
+
+CREATE OR REPLACE VIEW detalhesConsulta(codigo, data, paciente, medico) AS
+select c.codigo, c.data, p.nome, f.nome from consulta c
+JOIN paciente p ON c.codpac = p.codigo
+JOIN medico m ON c.matmed = m.f_matricula
+JOIN funcionario f ON m.f_matricula = f.matricula
+ORDER BY c.codigo;
+
+select * from detalhesConsulta;
