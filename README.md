@@ -19,9 +19,10 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 - [x] Modelo Conceitual e Lógico.
 - [x] Criação de 2 usuários (1 Owner e 1 com acesso restrito).
 - [x] Criação do BD e associação a Owner.
-- [ ] Tabelas e Constraints (Campos Nulos e não nulos, check de validação).
+- [x] Tabelas e Constraints (Campos Nulos e não nulos)
+- [ ] Tabelas e Constraints (Check de validação).
 - [x] 10 Consultas variadas.
-- [ ] 1 Visão que permita inserção.
+- [x] 1 Visão que permita inserção.
 - [ ] 2 visões robustas.
 - [x] Provê acesso a uma das visões ao usuário 2.
 - [ ] 3 índices.
