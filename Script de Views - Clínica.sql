@@ -10,7 +10,16 @@ ORDER BY p.nome;
 
 select * from examesolicitado
 
+create VIEW detalhesRadiografia (data, imagem, Radiografia, Radiologista) AS
+select r.data, r.imagem, t.descricao, f.nome from radiografia r
+JOIN tipo t ON r.codtipo = t.codigo
+JOIN Radiologista ra ON r.matrad = ra.f_matricula
+JOIN Funcionario f ON f.matricula = ra.f_matricula
+ORDER BY r.data;
 
+select * from detalhesRadiografia;
+
+-- View de Inserção
 CREATE OR REPLACE VIEW detalhesConsulta(codigo, data, paciente, medico) AS
 select c.codigo, c.data, p.nome, f.nome from consulta c
 JOIN paciente p ON c.codpac = p.codigo
