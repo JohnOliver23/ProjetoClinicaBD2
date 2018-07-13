@@ -27,7 +27,7 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 - [x] Provê acesso a uma das visões ao usuário 2.
 - [ ] 3 índices.
 - [x] 1 Função com uso de SUM, MAX, MIN, AVG ou COUNT.
-- [ ] 3 Funções. (Ao menos duas com tratamento de exceções).
+- [x] 3 Funções. (Ao menos duas com tratamento de exceções).
 - [x] Provê acesso de execução de uma das funções ao usuário 2.
 - [ ] 3 Triggers.
 - [ ] Identificar 2 consultas que possam ser melhoradas.
