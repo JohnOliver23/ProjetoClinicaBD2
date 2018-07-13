@@ -1,4 +1,4 @@
--- Funções
+﻿-- Funções
 
 -- 01 Quantidades de Consultas realizados por um dado médico
 
@@ -71,8 +71,28 @@ $$ LANGUAGE plpgsql;
 
 select checkRad('Tórax');
 
+-- 04 Quantos pacientes por Convênio
+create or replace function quantPacientes(convenio_input varchar) returns integer AS $$
+DECLARE
+	total integer;
+BEGIN
+	select count(*), c.cnpj into strict total FROM Convenio c
+	join Paciente p ON c.cnpj = p.convenio
+	WHERE c.nome = convenio_input
+	group by c.cnpj;
+	return total;
+	EXCEPTION
+		WHEN no_data_found THEN
+			Raise notice 'O convenio % não existe', convenio_input;
+			return -1;
+		WHEN OTHERS THEN
+			raise notice 'Error: %', SQLSTATE;
+			raise notice 'Message: %', SQLERRM;
+			return -1;
+END;
+$$ language 'plpgsql';
 
-
+select quantPacientes('Amil Saúde');
 
 
 -- Função encontrada na interner para a remoção de acentos de texto.
