@@ -23,7 +23,7 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 - [ ] Tabelas e Constraints (Check de validação).
 - [x] 10 Consultas variadas.
 - [x] 1 Visão que permita inserção.
-- [ ] 2 visões robustas.
+- [x] 2 visões robustas.
 - [x] Provê acesso a uma das visões ao usuário 2.
 - [ ] 3 índices.
 - [x] 1 Função com uso de SUM, MAX, MIN, AVG ou COUNT.
