@@ -64,4 +64,3 @@ FROM resultado_analisa a JOIN medico m
 ON a.matmed = m.f_matricula JOIN
 funcionario f ON m.f_matricula = f.matricula
 GROUP BY f.nome, m.crm
-

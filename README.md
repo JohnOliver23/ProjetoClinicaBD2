@@ -25,7 +25,7 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 - [x] 1 Visão que permita inserção.
 - [x] 2 visões robustas.
 - [x] Provê acesso a uma das visões ao usuário 2.
-- [ ] 3 índices.
+- [x] 3 índices.
 - [x] 1 Função com uso de SUM, MAX, MIN, AVG ou COUNT.
 - [x] 3 Funções. (Ao menos duas com tratamento de exceções).
 - [x] Provê acesso de execução de uma das funções ao usuário 2.
