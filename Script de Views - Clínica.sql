@@ -1,4 +1,7 @@
-﻿CREATE OR REPLACE VIEW ExameSolicitado AS
+-- Views
+
+--01 Pacientes que possuem exames solicitados
+CREATE OR REPLACE VIEW exameSolicitado AS
 Select p.nome Paciente, f.nome Médico, t.descricao, a.descricao AS Exame
 FROM funcionario f JOIN medico m ON f.matricula = m.f_matricula
 JOIN consulta c ON c.matmed = m.f_matricula
@@ -10,6 +13,7 @@ ORDER BY p.nome;
 
 select * from examesolicitado
 
+--02 Exibe detalhes da radiografia
 create VIEW detalhesRadiografia (data, imagem, Radiografia, Radiologista) AS
 select r.data, r.imagem, t.descricao, f.nome from radiografia r
 JOIN tipo t ON r.codtipo = t.codigo
