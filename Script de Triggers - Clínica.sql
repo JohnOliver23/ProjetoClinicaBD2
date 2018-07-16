@@ -1,6 +1,4 @@
-﻿select * from detalhesConsulta;
-
--- Trigger para View de Inserção
+﻿-- Trigger para View de Inserção
 create or replace function inserirView() returns trigger as $$
 DECLARE
 	matmed varchar;
@@ -34,3 +32,29 @@ execute procedure inserirview();
 insert into detalhesconsulta(data, paciente, medico) values (current_date, 'Teste', 'Adam Mccray');
 insert into detalhesconsulta(data, paciente, medico) values (current_date, 'Dalton Rodgers', 'Teste');
 insert into detalhesconsulta(data, paciente, medico) values (current_date, 'Dalton Rodgers', 'Adam Mccray');
+
+select * from detalhesConsulta;
+
+
+-- Trigger Para Log de radiografia
+create table lograd (
+	usuario		varchar,
+	data		date,
+	operacao	varchar);
+
+create or replace function inserirlograd() returns trigger as $$
+DECLARE
+	user varchar default current_user;
+BEGIN
+	insert into lograd values (user, current_date, TG_OP);
+	return new;
+END;
+$$ language 'plpgsql';
+
+create trigger logradTrigger before update or delete or insert ON Radiografia
+for each row
+execute procedure inserirlograd();
+-- Teste do Trigger
+select * from lograd;
+insert into radiografia values (default, '2018-05-22', 'imagem21.png', '444357453', 4, 20);
+select * from lograd;
