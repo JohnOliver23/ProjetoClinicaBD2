@@ -30,7 +30,7 @@ Projeto da disciplina de Banco de Dados 2 do curso Sistemas para Internet no IFP
 - [x] 3 Funções. (Ao menos duas com tratamento de exceções).
 - [x] Provê acesso de execução de uma das funções ao usuário 2.
 - [x] 3 Triggers.
-- [ ] Identificar 2 consultas que possam ser melhoradas.
+- [x] Identificar 2 consultas que possam ser melhoradas.
 
 
 
