@@ -58,3 +58,29 @@ execute procedure inserirlograd();
 select * from lograd;
 insert into radiografia values (default, '2018-05-22', 'imagem21.png', '444357453', 4, 20);
 select * from lograd;
+select * from radiografia;
+
+-- Trigger para Validação de horário em Radiografia
+create or replace function validarHorarioRad() returns trigger as $$
+DECLARE
+	horario integer;
+	horarioatual varchar;
+BEGIN
+	horario := Extract(hour from current_time);
+	if (horario > 18) THEN
+		raise exception 'Expediente finalizado.';
+	end if;
+	return new;
+	EXCEPTION
+		WHEN raise_exception THEN
+			horarioatual := TO_CHAR(now(), 'hh24:mi:ss');
+			raise notice 'São %, expediente finalizado.', horarioatual;
+			return null;
+END;
+$$ language 'plpgsql';
+
+create trigger HorarioRadTrigger before insert or update or delete ON Radiografia
+for each row
+execute procedure validarhorariorad();
+-- Teste do Trigger
+insert into radiografia values (default, '2018-05-22', 'imagem22.png', '444357453', 1, 20);
