@@ -1,6 +1,6 @@
 ﻿-- Funções
 
--- 01 Quantidades de Consultas realizados por um dado médico
+-- 01 Quantidades de Consultas realizadas por um dado médico
 
 create or replace function checkConsultas(mat medico.f_matricula%type)  
 returns integer AS $$
@@ -71,7 +71,7 @@ $$ LANGUAGE plpgsql;
 
 select checkRad('Tórax');
 
--- 04 Quantos pacientes por Convênio
+-- 04 Quantidade de pacientes por Convênio
 create or replace function quantPacientes(convenio_input varchar) returns integer AS $$
 DECLARE
 	total integer;
