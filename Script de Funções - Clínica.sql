@@ -95,7 +95,7 @@ $$ language 'plpgsql';
 select quantPacientes('Amil Saúde');
 
 
--- Função encontrada na interner para a remoção de acentos de texto.
+-- Função encontrada na internet para a remoção de acentos de texto.
 -- URL: http://paposql.blogspot.com/2011/12/retirando-acentuacao-no-postgresql.html
  CREATE OR REPLACE FUNCTION retira_acentuacao(p_texto text)  
   RETURNS text AS  
