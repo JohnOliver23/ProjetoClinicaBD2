@@ -2,30 +2,35 @@
 
 CREATE TABLE Paciente (
     Codigo serial 	PRIMARY KEY not null,
-    CPF 		VARCHAR not null,
+    CPF 		VARCHAR(13) not null,
     Endereço 		VARCHAR null,
     Telefone 		VARCHAR null,
     Nome 		VARCHAR not null,
-    Convenio 		VARCHAR null
+    Convenio 		VARCHAR null,
+
+    constraint ck_tel_paci CHECK(Telefone like '([0-9][0-9])[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+    constraint ck_convenio CHECK(Convenio like '[0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]/[0-9][0-9][0-9][0-9]-[0-9][0-9]')
 );
 
 CREATE TABLE Funcionario (
     Nome 		VARCHAR not null,
-    Matricula 		VARCHAR PRIMARY KEY not null,
+    Matricula 		VARCHAR(9) PRIMARY KEY not null,
     Telefone 		VARCHAR null,
     Endereço 		VARCHAR null,
-    CPF 		VARCHAR not null
+    CPF 		VARCHAR(13) not null,
+
+    constraint ck_tel_func CHECK(Telefone like '([0-9][0-9])[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]')
 );
 
 CREATE TABLE Medico (
-    CRM 	VARCHAR not null,
-    F_Matricula VARCHAR PRIMARY KEY not null
+    CRM 	VARCHAR(4) not null,
+    F_Matricula VARCHAR(9) PRIMARY KEY not null
 );
 
 CREATE TABLE Consulta (
     codigo 	serial PRIMARY KEY not null,
     Data 	DATE not null,
-    MatMed 	VARCHAR not null,
+    MatMed 	VARCHAR(9) not null,
     CodPac 	INTEGER not null
 );
 
@@ -33,21 +38,23 @@ CREATE TABLE Radiografia (
     Codigo 	serial PRIMARY KEY not null,
     Data 	DATE not null,
     Imagem 	VARCHAR not null,
-    MatRad 	VARCHAR null,
+    MatRad 	VARCHAR(9) null,
     CodTipo 	INTEGER null,
     CodConsulta INTEGER not null
 );
 
 CREATE TABLE Convenio (
     CNPJ VARCHAR PRIMARY KEY not null,
-    Nome VARCHAR not null
+    Nome VARCHAR not null,
+
+    constraint ck_cnpj CHECK(CNPJ like '[0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9]/[0-9][0-9][0-9][0-9]-[0-9][0-9]')
 );
 
 CREATE TABLE Resultado_Analisa (
     Codigo	serial PRIMARY KEY not null,
     Descricao	VARCHAR null,
     Data	DATE not null,
-    MatMed	VARCHAR not null,
+    MatMed	VARCHAR(9) not null,
     CodRad	INTEGER not null
 );
 
@@ -58,8 +65,8 @@ CREATE TABLE Tipo (
 
 
 CREATE TABLE Radiologista (
-    CRTR 	VARCHAR not null,
-    F_Matricula VARCHAR PRIMARY KEY not null
+    CRTR 	VARCHAR(4) not null,
+    F_Matricula VARCHAR(9) PRIMARY KEY not null
 );
  
 ALTER TABLE Paciente ADD CONSTRAINT FK_Paciente_1
